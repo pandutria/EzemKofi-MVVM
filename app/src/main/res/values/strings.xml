@@ -1,5 +1,19 @@
 <resources>
-    <string name="app_name">EzemKofi-MVVM</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="app_name">EzemKofi</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_title">Login</string>
+    <string name="login_subtitle">Login with your account to continue</string>
+    <string name="dont_have_acc">Dont have an account?</string>
+    <string name="create_acc">Create an account!"</string>
+    <string name="already_have_acc">Already have an account?</string>
+    <string name="username">Username"</string>
+    <string name="fullname">Fullname"</string>
+    <string name="email">Email"</string>
+    <string name="password">Password"</string>
+    <string name="confirm_password">Confirm Password"</string>
+    <string name="register_title">Create Account</string>
+    <string name="register_subtitle">Register yourself to become our member and enjoy all the benefits</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="login_here">Login here!</string>
+    <string name="hint_search_coffee">Find your perfect coffee</string>
 </resources>

@@ -20,7 +20,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="@string/login_title"
         android:fontFamily="@font/poppins_bold"
         android:textColor="@color/textPrimary"
         android:textSize="30sp"/>
@@ -28,7 +28,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login with your account to continue"
+        android:text="@string/login_subtitle"
         android:fontFamily="@font/poppins_medium"
         android:textColor="@color/textPrimary"
         android:textSize="16sp"/>
@@ -48,7 +48,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Username"
+                android:text="@string/username"
                 android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/textSecondary"
                 android:textSize="16sp"/>
@@ -59,6 +59,7 @@
                 android:layout_height="40dp"
                 android:textSize="14sp"
                 android:fontFamily="@font/poppins_medium"
+                android:backgroundTint="@color/textSecondary"
                 android:textColor="@color/textPrimary"/>
 
         </LinearLayout>
@@ -71,7 +72,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Password"
+                android:text="@string/password"
                 android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/textSecondary"
                 android:textSize="16sp"/>
@@ -82,10 +83,10 @@
                 android:layout_height="40dp"
                 android:textSize="14sp"
                 android:fontFamily="@font/poppins_medium"
+                android:backgroundTint="@color/textSecondary"
                 android:textColor="@color/textPrimary"/>
 
         </LinearLayout>
-
 
     </LinearLayout>
 
@@ -94,7 +95,8 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:backgroundTint="@color/primary"
-        android:text="LOGIN"
+        android:text="@string/login_title"
+        android:textAllCaps="true"
         android:fontFamily="@font/poppins_semibold"
         android:textColor="@color/bg"
         android:clipToOutline="true"
@@ -111,7 +113,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dont't have an account?"
+            android:text="@string/dont_have_acc"
             android:fontFamily="@font/poppins_semibold"
             android:layout_marginEnd="5dp"
             android:textSize="14sp"
@@ -121,7 +123,7 @@
             android:id="@+id/tvRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Create an account!"
+            android:text="@string/create_acc"
             android:textSize="14sp"
             android:fontFamily="@font/poppins_semibold"
             android:textColor="@color/primary"/>

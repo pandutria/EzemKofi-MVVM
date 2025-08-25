@@ -1,14 +1,209 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical"
+    android:paddingVertical="20dp"
+    android:paddingHorizontal="15dp"
     tools:context=".ui.auth.register.RegisterFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scaleType="fitStart"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/logo_green_with_icon"/>
 
-</FrameLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register_title"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/textPrimary"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register_subtitle"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/textPrimary"
+        android:textSize="14sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="25dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/username"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/textSecondary"
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/etUsername"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_medium"
+                android:backgroundTint="@color/textSecondary"
+                android:textColor="@color/textPrimary"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fullname"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/textSecondary"
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/etFullname"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_medium"
+                android:backgroundTint="@color/textSecondary"
+                android:textColor="@color/textPrimary"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/email"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/textSecondary"
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_medium"
+                android:backgroundTint="@color/textSecondary"
+                android:textColor="@color/textPrimary"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/password"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/textSecondary"
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_medium"
+                android:backgroundTint="@color/textSecondary"
+                android:textColor="@color/textPrimary"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/confirm_password"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/textSecondary"
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/etConfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_medium"
+                android:backgroundTint="@color/textSecondary"
+                android:textColor="@color/textPrimary"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/primary"
+        android:text="@string/sign_in"
+        android:textAllCaps="true"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/bg"
+        android:clipToOutline="true"
+        android:layout_marginBottom="25dp"
+        android:textSize="16sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/already_have_acc"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_marginEnd="5dp"
+            android:textSize="14sp"
+            android:textColor="@color/textSecondary"/>
+
+        <TextView
+            android:id="@+id/tvLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login_here"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/primary"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
