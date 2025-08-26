@@ -1,7 +1,9 @@
 package com.example.ezemkofi_mvvm.data.repository
 
-import com.example.ezemkofi_mvvm.data.model.register.RegisterRequest
-import com.example.ezemkofi_mvvm.data.model.register.RegisterResponse
+import android.content.Context
+import com.example.ezemkofi_mvvm.data.local.TokenSharedPrefrence
+import com.example.ezemkofi_mvvm.data.model.auth.LoginRequest
+import com.example.ezemkofi_mvvm.data.model.auth.RegisterRequest
 import com.example.ezemkofi_mvvm.data.network.RetrofitInstance
 import retrofit2.Response
 
@@ -10,8 +12,21 @@ class AuthRepository {
         username: String,
         fullname: String,
         email: String,
-        password: String
+        password: String,
+        context: Context
     ): Response<String> {
-        return RetrofitInstance.api.register(RegisterRequest(username, fullname, email, password))
+        val res = RetrofitInstance.api.register(RegisterRequest(username, fullname, email, password))
+        TokenSharedPrefrence(context).saveToken(res.body()!!)
+        return res
+    }
+
+    suspend fun login(
+        username: String,
+        password: String,
+        context: Context
+    ) : Response<String> {
+        val res = RetrofitInstance.api.login(LoginRequest(username, password))
+        TokenSharedPrefrence(context).saveToken(res.body()!!)
+        return res
     }
 }

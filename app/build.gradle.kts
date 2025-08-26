@@ -44,6 +44,7 @@ dependencies {
     implementation (libs.retrofit)
     implementation (libs.squareup.converter.gson)
     implementation (libs.okhttp3.logging.interceptor)
+    implementation (libs.converter.scalars)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

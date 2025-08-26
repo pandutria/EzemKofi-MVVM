@@ -29,4 +29,8 @@ class LoginFragment : Fragment() {
         return  binding.root
     }
 
+    fun handleLogin() {
+        
+    }
+
 }

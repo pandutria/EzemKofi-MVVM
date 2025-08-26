@@ -1,4 +1,4 @@
-package com.example.ezemkofi_mvvm.data.model.register
+package com.example.ezemkofi_mvvm.data.model.auth
 
 data class RegisterRequest(
     val username: String? = null,

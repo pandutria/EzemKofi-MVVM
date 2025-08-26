@@ -9,9 +9,12 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.ezemkofi_mvvm.R
+import com.example.ezemkofi_mvvm.data.local.TokenSharedPrefrence
+import com.example.ezemkofi_mvvm.data.network.ApiService
 import com.example.ezemkofi_mvvm.data.repository.AuthRepository
 import com.example.ezemkofi_mvvm.databinding.FragmentRegisterBinding
 import com.example.ezemkofi_mvvm.utils.Helper
+import com.example.ezemkofi_mvvm.utils.State
 
 class RegisterFragment : Fragment() {
     lateinit var binding: FragmentRegisterBinding
@@ -46,20 +49,22 @@ class RegisterFragment : Fragment() {
                 val email = binding.etEmail.text.toString()
                 val password = binding.etPassword.text.toString()
 
-                viewModel.register(username, fullname, email, password)
+                viewModel.register(username, fullname, email, password, requireContext())
             }
 
-            viewModel.registerResult.observe(viewLifecycleOwner) { response ->
-                if (response.isSuccessful) {
-                    val code = response.code()
-                    if (code in 200..300) {
-                        Helper.toast(requireContext(), "Register Success!")
-                        findNavController().navigate(R.id.action_registerFragment_to_mainFragment)
-                    } else {
-                        Helper.toast(requireContext(), "Eror : ${response.message()}")
+            viewModel.registerResult.observe(viewLifecycleOwner) { state ->
+                when (state) {
+                    is State.Loading -> {
+                        Helper.toast(requireContext(), "Loading...")
                     }
-                } else {
-                    Helper.toast(requireContext(), "Error: ${response.message()}")
+                    is State.Success -> {
+                        Helper.log("SaveToken", TokenSharedPrefrence(requireContext()).getToken())
+                        Helper.toast(requireContext(), "Register Success! ${state.message}")
+                        findNavController().navigate(R.id.action_registerFragment_to_mainFragment)
+                    }
+                    is State.Error -> {
+                        Helper.toast(requireContext(), state.error)
+                    }
                 }
             }
         }
