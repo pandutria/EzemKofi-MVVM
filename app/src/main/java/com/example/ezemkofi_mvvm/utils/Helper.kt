@@ -10,6 +10,6 @@ object Helper {
     }
 
     fun log(message: String, string: String) {
-        Log.d(message, "Token : ${string}")
+        Log.d(message, string)
     }
 }

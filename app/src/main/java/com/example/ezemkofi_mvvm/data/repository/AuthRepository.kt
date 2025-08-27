@@ -2,6 +2,7 @@ package com.example.ezemkofi_mvvm.data.repository
 
 import android.content.Context
 import com.example.ezemkofi_mvvm.data.local.TokenSharedPrefrence
+import com.example.ezemkofi_mvvm.data.model.auth.AuthResponse
 import com.example.ezemkofi_mvvm.data.model.auth.LoginRequest
 import com.example.ezemkofi_mvvm.data.model.auth.RegisterRequest
 import com.example.ezemkofi_mvvm.data.network.RetrofitInstance
@@ -27,6 +28,13 @@ class AuthRepository {
     ) : Response<String> {
         val res = RetrofitInstance.api.login(LoginRequest(username, password))
         TokenSharedPrefrence(context).saveToken(res.body()!!)
+        return res
+    }
+
+    suspend fun me(context: Context)
+    : Response<AuthResponse> {
+        val token = TokenSharedPrefrence(context).getToken()
+        val res = RetrofitInstance.api.me("Bearer $token")
         return res
     }
 }

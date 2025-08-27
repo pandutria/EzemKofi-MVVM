@@ -7,12 +7,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.example.ezemkofi_mvvm.data.repository.AuthRepository
+import com.example.ezemkofi_mvvm.utils.Helper
 import com.example.ezemkofi_mvvm.utils.State
 import kotlinx.coroutines.launch
 
 class RegisterViewModel(private val repo: AuthRepository) : ViewModel() {
-    private val _registerResult = MutableLiveData<State>()
-    val registerResult: LiveData<State> get() = _registerResult
+    private val _registerResult = MutableLiveData<State<String>>()
+    val registerResult: LiveData<State<String>> get() = _registerResult
 
     fun register(
         username: String,
@@ -35,6 +36,8 @@ class RegisterViewModel(private val repo: AuthRepository) : ViewModel() {
                 else _registerResult.postValue(State.Error("Eror : ${res.body()}"))
             } catch (e: Exception) {
                 e.printStackTrace()
+                _registerResult.postValue(State.Error("Eror : ${e.message}"))
+                Helper.log("Eror", e.message!!)
             }
         }
     }

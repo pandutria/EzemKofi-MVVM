@@ -19,15 +19,4 @@ class TokenSharedPrefrence(context: Context)  {
     fun removeToken() {
         shared.edit().remove(tokenKey).apply()
     }
-
-
-//    fun saveToken(token: String) {
-//        val shared = context.getSharedPreferences(sharedKey, Context.MODE_PRIVATE)
-//        shared.edit().putString(tokenKey, token).apply()
-//    }
-//
-//    fun getToken(): String {
-//        val shared = context.getSharedPreferences(sharedKey, Context.MODE_PRIVATE)
-//        return shared.getString(tokenKey, null).toString()
-//    }
 }
