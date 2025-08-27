@@ -33,6 +33,9 @@ class LoginFragment : Fragment() {
             )
         }
 
+        binding.etUsername.setText("string")
+        binding.etPassword.setText("string")
+
         handleLogin()
 
 
