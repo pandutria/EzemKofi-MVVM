@@ -7,8 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.example.ezemkofi_mvvm.data.local.TokenSharedPrefrence
-import com.example.ezemkofi_mvvm.data.model.auth.AuthResponse
-import com.example.ezemkofi_mvvm.data.model.category.CategoryResponse
+import com.example.ezemkofi_mvvm.data.model.response.AuthResponse
 import com.example.ezemkofi_mvvm.data.repository.AuthRepository
 import com.example.ezemkofi_mvvm.utils.State
 import kotlinx.coroutines.launch

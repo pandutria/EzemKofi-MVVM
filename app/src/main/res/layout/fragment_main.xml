@@ -94,6 +94,18 @@
                 android:overScrollMode="never"
                 android:clipToPadding="false"/>
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvProductByCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_product_by_category"
+                android:paddingLeft="15dp"
+                android:paddingRight="-10dp"
+                android:overScrollMode="never"
+                android:clipToPadding="false"/>
+
 
         </LinearLayout>
 

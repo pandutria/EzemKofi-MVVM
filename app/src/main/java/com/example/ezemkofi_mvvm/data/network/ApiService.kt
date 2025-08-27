@@ -1,9 +1,9 @@
 package com.example.ezemkofi_mvvm.data.network
 
-import com.example.ezemkofi_mvvm.data.model.auth.AuthResponse
-import com.example.ezemkofi_mvvm.data.model.auth.LoginRequest
-import com.example.ezemkofi_mvvm.data.model.auth.RegisterRequest
-import com.example.ezemkofi_mvvm.data.model.category.CategoryResponse
+import com.example.ezemkofi_mvvm.data.model.response.AuthResponse
+import com.example.ezemkofi_mvvm.data.model.request.LoginRequest
+import com.example.ezemkofi_mvvm.data.model.request.RegisterRequest
+import com.example.ezemkofi_mvvm.data.model.response.CategoryResponse
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET

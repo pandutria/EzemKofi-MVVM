@@ -5,10 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import com.example.ezemkofi_mvvm.data.model.category.CategoryResponse
-import com.example.ezemkofi_mvvm.data.repository.AuthRepository
+import com.example.ezemkofi_mvvm.data.model.response.CategoryResponse
 import com.example.ezemkofi_mvvm.data.repository.CategoryRepository
-import com.example.ezemkofi_mvvm.ui.main.MainViewModel
 import com.example.ezemkofi_mvvm.utils.State
 import kotlinx.coroutines.launch
 

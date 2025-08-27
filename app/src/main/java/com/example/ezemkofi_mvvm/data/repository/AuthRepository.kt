@@ -2,9 +2,9 @@ package com.example.ezemkofi_mvvm.data.repository
 
 import android.content.Context
 import com.example.ezemkofi_mvvm.data.local.TokenSharedPrefrence
-import com.example.ezemkofi_mvvm.data.model.auth.AuthResponse
-import com.example.ezemkofi_mvvm.data.model.auth.LoginRequest
-import com.example.ezemkofi_mvvm.data.model.auth.RegisterRequest
+import com.example.ezemkofi_mvvm.data.model.response.AuthResponse
+import com.example.ezemkofi_mvvm.data.model.request.LoginRequest
+import com.example.ezemkofi_mvvm.data.model.request.RegisterRequest
 import com.example.ezemkofi_mvvm.data.network.RetrofitInstance
 import retrofit2.Response
 

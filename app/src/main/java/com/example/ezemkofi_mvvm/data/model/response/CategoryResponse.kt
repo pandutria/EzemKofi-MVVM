@@ -1,4 +1,4 @@
-package com.example.ezemkofi_mvvm.data.model.category
+package com.example.ezemkofi_mvvm.data.model.response
 
 data class CategoryResponse(
     val id: Int? = null,

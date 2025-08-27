@@ -2,9 +2,9 @@ package com.example.ezemkofi_mvvm.ui.category
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.constraintlayout.motion.widget.MotionScene.Transition.TransitionOnClick
 import androidx.recyclerview.widget.RecyclerView
-import com.example.ezemkofi_mvvm.data.model.category.CategoryResponse
+import com.example.ezemkofi_mvvm.R
+import com.example.ezemkofi_mvvm.data.model.response.CategoryResponse
 import com.example.ezemkofi_mvvm.databinding.ItemCategoryBinding
 
 class CategoryAdapter(
@@ -12,13 +12,27 @@ class CategoryAdapter(
     private val onClick: (CategoryResponse) -> Unit
 ) : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
+    var selectedPosition = 0
+
     inner class ViewHolder(private val binding: ItemCategoryBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: CategoryResponse) {
+        fun bind(item: CategoryResponse, position: Int) {
             binding.tvName.text = item.name
 
+            if (position == selectedPosition) {
+                binding.tvName.setBackgroundResource(R.drawable.bg_item_category_selected)
+                binding.tvName.setTextColor(binding.root.context.getColor(R.color.bg))
+            } else {
+                binding.tvName.setBackgroundResource(R.drawable.bg_item_category_unselected)
+                binding.tvName.setTextColor(binding.root.context.getColor(R.color.textPrimary))
+            }
+
             binding.root.setOnClickListener {
+                val previousPosition = selectedPosition
+                selectedPosition = adapterPosition
+                notifyItemChanged(previousPosition)
+                notifyItemChanged(selectedPosition)
                 onClick(item)
             }
         }
@@ -34,7 +48,7 @@ class CategoryAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(categoiyList[position])
+        holder.bind(categoiyList[position], position)
     }
 
     fun setData(newCategories: List<CategoryResponse>) {
